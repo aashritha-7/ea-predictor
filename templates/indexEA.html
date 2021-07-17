@@ -1,0 +1,169 @@
+<html lang="en" dir="ltr">
+
+    <head>
+        <title>Employee Attrition Predictor</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Antic&display=swap" rel="stylesheet">
+<style>
+.container{
+width:100%;
+text-align:center;
+}
+
+
+.ml-container{
+margin: auto;
+width:100%;
+color:#926546;
+text-align:center;
+}
+
+.desc{
+margin-top:30px;
+margin-bottom:30px;
+color:#926546;
+padding:4px;
+
+
+}
+
+input{
+margin-top:10px;
+font-size:1.0em;
+width:35%;
+color:#926546;
+padding:10px;
+text-align:left;
+font-family: 'Antic', sans-serif;
+}
+
+.description{
+background-color:#926546;
+letter-spacing:0.2px;
+margin-left:20px;
+margin-right:20px;
+font-color:white;
+text-align:left;
+font-size:10px;
+font-family: 'Antic', sans-serif;
+color:green;
+
+
+}
+
+.dd{
+font-size:1.0em;
+width:35%;
+color:#926546;
+padding:10px;
+text-align:center;
+font-family: 'Antic', sans-serif;
+}
+
+input placeholder{
+text-align:left;
+}
+
+::placeholder{
+text-align:left;
+color:#926546;
+}
+
+.heading__font{
+margin-bottom:5px;
+
+}
+
+button {
+  background-color:#926546;; /* Red */ 
+  border: none;
+  padding: 18px 35px;
+  text-align: center;
+  color:white;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+ font-family: 'Antic', sans-serif;
+}
+
+button:hover{
+background-color:white;
+border:solid 0.1px #926546;
+color:#926546;
+}
+</style>
+ <body>
+<style>
+body
+{
+
+background-position: center;
+font-family: 'Antic', sans-serif;
+background-size:cover;
+}
+</style>
+
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h1 class='container-heading' style="color:#926546;"><span class="heading_font">EMPLOYEE ATTRITION PREDICTOR </span></h1>
+            <img src="../static/img3.jpg" alt="bg" width="48%" height="50%">
+            <div class='description'>
+    			<div class="desc" style="color:black; font-size:21px ">Attrition is the silent killer that can switly disable even the most successful and stable organizations in a shockingly spare amount of time. Hiring new employees is an extremely complex task that requires additional investment of capital, time and skills. A Machine Learning model which predicts employee attrition based upon certain factors such as an individual's average working hours, salary level etc is very benificial, thus the model. This makes it easy to analyze
+    			the attrition process, make a few required changes and improve the performance of employees. </div>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    		<form action="{{ url_for('predict') }}" method="POST">
+
+
+<input class="form-input" type="text" name="satisfaction_level" placeholder="Enter satisfaction level(0-1)"><br><br>
+<input class="form-input" type="text" name="last_evaluation" placeholder="Enter last evaluation(0-1)"><br><br>
+<input class="form-input" type="text" name="number_project" placeholder="Enter number of projects worked"><br><br>
+<input class="form-input" type="text" name="average_montly_hours" placeholder="Enter average montly hours"><br><br>
+
+<input class="form-input" type="text" name="time_spend_company" placeholder="Enter number of years worked at company"><br><br>
+
+<select style="margin-top:10px;" class="dd" id="Work_accident" name="Any work accidents?">
+<option value="">Any work accidents?</option>
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+  </select><br><br>
+
+<select style="margin-top:10px;" class="dd" id="promotion_last_5years" name="Promotion in last 5years">
+<option value="">Promotion in last 5years</option>
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+  </select><br><br>
+<select style="margin-top:10px;" class="dd" id="department" name="Select your department">
+    <option value="">Select your department</option>
+    <option value="7">technical</option>
+<option value="6">sales</option>
+<option value="5">product_mng</option>
+<option value="4">marketing</option>
+<option value="0">RandD</option>
+<option value="2">HR</option>
+<option value="1">accounting</option>
+<option value="3">management</option>
+  </select><br><br>
+
+<select style="margin-top:10px;" class="dd" id="salary" name="Select salary level">
+    <option value="">Select your salary Level</option>
+    <option value="1">Low</option>
+<option value="2">Medium</option>
+    <option value="0">High</option>
+   
+  </select><br><br>
+
+
+
+
+        		<button type="submit" class="my-cta-button">Predict</button>
+        	</form>
+    
+    </body>
+</html>
