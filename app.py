@@ -4,7 +4,9 @@ import os
 import numpy as np
 import pandas as pd
 import pickle
+
 app = Flask(__name__)
+
 model = pickle.load(open('PAE_model.pkl', 'rb'))
 @app.route('/')
 def home():
@@ -27,6 +29,7 @@ def predict():
    
     return render_template('resultEA.html', prediction_text=output)
 if __name__=="__main__":
+    
      #port = int(os.getenv('PORT', 8000))
      #app.run(host='0.0.0.0', port=port, debug=True)
      #http_server = WSGIServer(('0.0.0.0', port), app)
