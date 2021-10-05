@@ -4,6 +4,8 @@ import os
 import numpy as np
 import pandas as pd
 import pickle
+import logging
+
 
 app = Flask(__name__)
 
@@ -35,3 +37,5 @@ if __name__=="__main__":
      #http_server = WSGIServer(('0.0.0.0', port), app)
      #http_server.serve_forever()
     app.run(debug=True)
+    app.logger.addHandler(logging.StreamHandler(sys.stdout))
+    app.logger.setLevel(logging.ERROR)
